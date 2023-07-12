@@ -2,11 +2,13 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
-      - new_bug
+    branches: [ "main", "new_bug" ]
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # allows SonarQube to decorate PRs with analysis results
 
 jobs:
   build:
