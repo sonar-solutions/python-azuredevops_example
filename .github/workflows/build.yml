@@ -2,7 +2,8 @@ name: Build
 
 on:
   push:
-    branches: [ "main", "new_bug", "b0626" ]
+    branches: 
+      - '*'
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
