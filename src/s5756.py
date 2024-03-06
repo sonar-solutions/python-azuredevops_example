@@ -15,3 +15,6 @@ result = calculator.add(5, 10)
 print("Result:", result)
 
 #adding comment to trigger commit
+
+
+name = name
