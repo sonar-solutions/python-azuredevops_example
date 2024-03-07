@@ -23,3 +23,10 @@ import tempfile
 
 filename = tempfile.mktemp() # Noncompliant
 tmp_file = open(filename, "w+")
+
+
+
+def fpn(a):
+  j = 10
+  return i + a       # Noncompliant
+  j += 1             # this is never executed
