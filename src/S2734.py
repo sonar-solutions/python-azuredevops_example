@@ -11,22 +11,11 @@ if not a == 2:        # Noncompliant
 
 
 
-from aws_cdk import aws_ec2 as ec2
+from typing import List
 
-instance = ec2.Instance(
-    self,
-    "my_instance",
-    instance_type=nano_t2,
-    machine_image=ec2.MachineImage.latest_amazon_linux(),
-    vpc=vpc
-)
-
-instance.connections.allow_from(
-    ec2.Peer.any_ipv4(), # Noncompliant
-    ec2.Port.tcp(22),
-    description="Allows SSH from all IPv4"
-)
-instance.connections.allow_from_any_ipv4( # Noncompliant
-    ec2.Port.tcp(3389),
-    description="Allows Terminal Server from all IPv4"
-)
+def search_first_number_without_break(elements: List[str]):
+    for elt in elements:
+        if elt.isnumeric():
+            return elt
+    else:  # Noncompliant. This will be executed every time
+        raise ValueError("List does not contain any number")
