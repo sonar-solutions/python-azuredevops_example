@@ -17,3 +17,6 @@ def main():
 if __name__ == "__main__":
     main()
 
+def noncompliant():
+    ls = [1, 2, 3]
+    foo(ls[3])  # Noncompliant
