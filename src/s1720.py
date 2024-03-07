@@ -20,3 +20,7 @@ if __name__ == "__main__":
 def noncompliant():
     ls = [1, 2, 3]
     foo(ls[3])  # Noncompliant
+
+
+
+#include_next "foo.h" // Noncompliant
