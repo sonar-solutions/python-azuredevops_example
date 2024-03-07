@@ -23,4 +23,5 @@ def noncompliant():
 
 
 
-#include_next "foo.h" // Noncompliant
+def test_values(a, b):
+    assert (a, b)  # Noncompliant
