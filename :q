@@ -1,8 +1,0 @@
-sonar.projectKey=test_notifications
-sonar.python.version=3
-sonar.projectName=test_notifications
-
-sonar.coverage.exclusions=**/*
-sonar.branch.name=test_this	
-
-
