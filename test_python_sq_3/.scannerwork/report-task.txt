@@ -1,0 +1,6 @@
+projectKey=test_docker_project
+serverUrl=http://host.docker.internal:9104
+serverVersion=10.4.1.88267
+dashboardUrl=http://host.docker.internal:9104/dashboard?id=test_docker_project
+ceTaskId=73730678-300a-4148-aac8-cdadce318d4e
+ceTaskUrl=http://host.docker.internal:9104/api/ce/task?id=73730678-300a-4148-aac8-cdadce318d4e
