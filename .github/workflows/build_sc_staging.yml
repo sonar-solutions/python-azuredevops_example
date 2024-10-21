@@ -30,8 +30,11 @@ jobs:
         run: |
           mkdir -p $HOME/.sonar
           curl -sSLo $HOME/.sonar/sonar-scanner.zip ${{ env.SONAR_SCANNER_DOWNLOAD_URL }} 
+          echo "downloaded the scanner"
           unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+          echo "unzipped the scanner"
           echo "$HOME/.sonar/sonar-scanner-${{ env.SONAR_SCANNER_VERSION }}-linux/bin" >> $GITHUB_PATH
+          echo "added the scanner path"
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
