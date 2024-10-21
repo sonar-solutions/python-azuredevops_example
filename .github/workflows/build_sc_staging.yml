@@ -35,7 +35,7 @@ jobs:
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Put the name of your token here
+          SONAR_TOKEN: ${{ secrets.SONAR_SC_TOKEN }} # Put the name of your token here
         run: |
-          sonar-scanner -Dsonar.host.url="${{ env.SONAR_HOST_URL }}" -Dsonar.token="${{ env.SONAR_TOKEN }}" -Dsonar.verbose=true
+          sonar-scanner -Dsonar.host.url="${{ secrets.SONAR_SC_URL }}" -Dsonar.token="${{ env.SONAR_TOKEN }}" -Dsonar.verbose=true
         
