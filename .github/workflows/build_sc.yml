@@ -19,6 +19,9 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
             sonar.projectKey: TestOrgSQarturo-palau_test_python_sq_3
+            args: >
+              -Dsonar.verbose=true
+              -Dsonar.scanner.skipJreProvisioning=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_SC }}
