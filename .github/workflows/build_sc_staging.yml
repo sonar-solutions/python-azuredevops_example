@@ -42,7 +42,7 @@ jobs:
         run: echo $PATH
       - name: Run sonar-scanner
         run: |
-          sonar-scanner -Dsonar.host.url="${{ secrets.SONAR_SC_URL }}" -Dsonar.token="${{ env.SONAR_TOKEN }}" -Dsonar.verbose=true
+          sonar-scanner -Dsonar.host.url="${{ secrets.SONAR_SC_URL }}" -Dsonar.token="${{ env.SONAR_TOKEN }}" -Dsonar.verbose=true -Dsonar.organization=test-ping -Dsonar.projectKey=test-ping_github_action_sc 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_SC_TOKEN }} # Put the name of your token here
         
