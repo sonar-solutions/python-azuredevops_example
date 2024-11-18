@@ -39,7 +39,7 @@ steps:
       sonar.verbose=true
       sonar.projectKey=onboarding-examples_python-example
       sonar.projectName=onboarding-examples_python-example
-      sonar.source=src/
+      sonar.sources=src/
 
 - task: SonarQubeAnalyze@7
   inputs:
