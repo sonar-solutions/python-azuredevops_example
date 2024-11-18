@@ -13,9 +13,23 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: SonarCloudPrepare@3
+  inputs:
+    SonarCloud: 'SonarQube Cloud Production-python-example'
+    organization: 'azure-devops-onboarding-examples'
+    scannerMode: 'cli'
+    cliScannerVersion: '6.2.1'
+    configMode: 'file'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.verbose=true
 
+- task: SonarCloudAnalyze@3
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
 
+- task: SonarCloudPublish@3
+  inputs:
+    pollingTimeoutSec: '300'
