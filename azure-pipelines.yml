@@ -18,7 +18,7 @@ steps:
     SonarCloud: 'SonarQube Cloud Production-python-example'
     organization: 'azure-devops-onboarding-examples'
     scannerMode: 'cli'
-    cliScannerVersion: '6.2.1'
+    cliScannerVersion: '7.0.4'
     configMode: 'file'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
