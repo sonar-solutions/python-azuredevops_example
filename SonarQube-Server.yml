@@ -14,7 +14,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  projectName: $(System.TeamProject)
+  repositoryName: $(Build.Repository.Name)
+
 steps:
+- script: |
+    echo "Project Name: $(projectName)"
+    echo "Repository Name: $(repositoryName)"
+  displayName: 'Display Project and Repository Names'
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube Server-python-example'
