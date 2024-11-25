@@ -21,8 +21,8 @@ variables:
 resources:
   repositories:
     - repository: templates
-      type: azureReposGit
-      name: onoboarding-examples/pipeline-templates
+      type: git
+      name: pipeline-templates
 
 steps:
   - template: sonarqube-server.yml@templates
