@@ -22,11 +22,11 @@ resources:
   repositories:
     - repository: templates
       type: git
-      name: pipeline-templates
+      name: pipeline-templates/pipeline-templates
 
 steps:
   - template: sonarqube-server.yml@templates
     parameters:
       projectKey: 'azure-pipeline-template-test'
       projectName: 'azure-pipeline-template-test'
-      SonarQube-ServiceConnection: 'SonarQube Server-python-example'
+      SonarQubeServiceConnection: 'SonarQube Server-python-example'
