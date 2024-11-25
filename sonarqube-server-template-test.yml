@@ -18,9 +18,9 @@ variables:
   projectName: $(System.TeamProject)
   repositoryName: $(Build.Repository.Name)
 
-extends:
-  template: sonarqube-server.yml
-  parameters:
-    projectKey: 'azure-pipeline-template-test'
-    projectName: 'azure-pipeline-template-test'
-    SonarQube-ServiceConnection: 'SonarQube Server-python-example'
+steps:
+  - template: pipeline-templates/sonarqube-server.yml
+    parameters:
+      projectKey: 'azure-pipeline-template-test'
+      projectName: 'azure-pipeline-template-test'
+      SonarQube-ServiceConnection: 'SonarQube Server-python-example'
