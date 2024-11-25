@@ -14,10 +14,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  projectName: $(System.TeamProject)
-  repositoryName: $(Build.Repository.Name)
-
 resources:
   repositories:
     - repository: templates
