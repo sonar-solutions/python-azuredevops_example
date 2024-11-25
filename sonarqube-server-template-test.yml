@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - src/*
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  projectName: $(System.TeamProject)
+  repositoryName: $(Build.Repository.Name)
+
+extends:
+  template: sonarqube-server.yml
+  parameters:
+    projectKey: 'azure-pipeline-template-test'
+    projectName: 'azure-pipeline-template-test'
+    SonarQube-ServiceConnection: 'SonarQube Server-python-example'
