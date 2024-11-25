@@ -18,8 +18,14 @@ variables:
   projectName: $(System.TeamProject)
   repositoryName: $(Build.Repository.Name)
 
+resources:
+  repositories:
+    - repository: templates
+      type: azureReposGit
+      name: onoboarding-examples/pipeline-templates
+
 steps:
-  - template: pipeline-templates/sonarqube-server.yml
+  - template: sonarqube-server.yml@templates
     parameters:
       projectKey: 'azure-pipeline-template-test'
       projectName: 'azure-pipeline-template-test'
