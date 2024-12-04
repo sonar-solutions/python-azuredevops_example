@@ -15,6 +15,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: self
+ # Disable shallow fetch
+  fetchDepth: 0
+  
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
@@ -30,7 +34,7 @@ steps:
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
       sonar.verbose=true
-      soanr.sources=src/
+      sonar.sources=src/
 
 - task: SonarCloudAnalyze@3
   inputs:

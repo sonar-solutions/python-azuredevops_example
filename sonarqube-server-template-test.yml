@@ -14,6 +14,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  projectName: $(System.TeamProject)
+  repositoryName: $(Build.Repository.Name)
+
 resources:
   repositories:
     - repository: templates
@@ -26,3 +30,15 @@ steps:
       projectKey: 'azure-pipeline-template-test'
       projectName: 'azure-pipeline-template-test'
       SonarQubeServiceConnection: 'SonarQube Server-$(System.TeamProject)'
+
+  - script: |
+    echo "Project Name: $(projectName)"
+    echo "Repository Name: $(repositoryName)"
+  displayName: 'Display Project and Repository Names'
+
+  - script: |
+    echo "Collection URI: $(System.CollectionUri)"
+    # Extract the organization name from the collection URI
+    organizationName=$(echo $(System.CollectionUri) | awk -F'/' '{print $4}')
+    echo "Organization Name: $organizationName"
+  displayName: 'Extract and Display Organization Name'

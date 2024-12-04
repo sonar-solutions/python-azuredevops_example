@@ -12,30 +12,14 @@ trigger:
     include:
       - src/*
 
-pr:
-  branches:
-    include:
-      - '*'
-
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  projectName: $(System.TeamProject)
-  repositoryName: $(Build.Repository.Name)
-
 steps:
-- script: |
-    echo "Project Name: $(projectName)"
-    echo "Repository Name: $(repositoryName)"
-  displayName: 'Display Project and Repository Names'
+- checkout: self
+ # Disable shallow fetch
+  fetchDepth: 0
 
-- script: |
-    echo "Collection URI: $(System.CollectionUri)"
-    # Extract the organization name from the collection URI
-    organizationName=$(echo $(System.CollectionUri) | awk -F'/' '{print $4}')
-    echo "Organization Name: $organizationName"
-  displayName: 'Extract and Display Organization Name'
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube Server-python-example'
