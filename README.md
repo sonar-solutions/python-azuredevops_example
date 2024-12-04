@@ -1,6 +1,6 @@
 ## Overview
 
-This project is an example of using Azure DevOps for a Python project. It demonstrates how to set up a CI/CD pipeline for a Python application.  
+This project is an example of using Azure DevOps for a dotnet project. It demonstrates how to set up a CI/CD pipeline for a Python application.  
 We have multiple CI/CD Pipeline examples, one for running the SonarScanner and sending the results to SonarQube Server and the other for sending the results to SonarQube Cloud.  
 
 PLEASE READ OUR SONARQUBE DOCUMENTATION FOR WORKING WITH AZURE DEVOPS PIPELINES  
@@ -17,6 +17,7 @@ Azure DevOps Pipelines - SonarQube Cloud > https://docs.sonarsource.com/sonarqub
     - SonarQube Server Example: SonarQube-Server.yml 
 
 ## Important Links
+SonarQube Server - SonarQubePrepare > https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/sonar-qube-prepare-v7?view=azure-pipelines  
 Azure DevOps - SonarQube Server Integration > https://docs.sonarsource.com/sonarqube-server/latest/devops-platform-integration/azure-devops-integration/  
 Azure DevOps Pipelines - SonarQube Cloud > https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/ci-based-analysis/azure-pipelines/  
 SonarScanner Analysis Scope > https://docs.sonarsource.com/sonarqube-server/latest/project-administration/analysis-scope/  
