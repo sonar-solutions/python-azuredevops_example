@@ -12,11 +12,6 @@ trigger:
     include:
       - src/*
 
-pr:
-  branches:
-    include:
-      - '*'
-
 pool:
   vmImage: ubuntu-latest
 
@@ -50,6 +45,7 @@ steps:
       sonar.projectKey=onboarding-examples_python-example
       sonar.projectName=onboarding-examples_python-example
       sonar.sources=src/
+      sonar.qualitygate.wait=true
 
 - task: SonarQubeAnalyze@7
   inputs:
