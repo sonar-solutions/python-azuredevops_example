@@ -26,7 +26,8 @@ SonarScanner Analysis Parameters > https://docs.sonarsource.com/sonarqube-server
 There may be situations or branches in which you will like to fail the pipeline if the SonarQube Quality Gate fails in order to stop any other steps in the pipeline.  
 This can be done by adding ```python
 sonar.qualitygate.wait=true
-``` to the **extraProperties** section in the **SonarQubePrepare/SonarCloudPrepare** task.  
+``` 
+to the **extraProperties** section in the **SonarQubePrepare/SonarCloudPrepare** task.  
 
 Example
 ``` sh
