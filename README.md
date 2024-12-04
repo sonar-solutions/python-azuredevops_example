@@ -22,23 +22,17 @@ Azure DevOps Pipelines - SonarQube Cloud > https://docs.sonarsource.com/sonarqub
 SonarScanner Analysis Scope > https://docs.sonarsource.com/sonarqube-server/latest/project-administration/analysis-scope/  
 SonarScanner Analysis Parameters > https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/analysis-parameters/  
 
+## Example to fail the entire pipeline if Quality Gate fails
+There may be situations or branches in which you will like to fail the pipeline if the SonarQube Quality Gate fails in order to stop any other steps in the pipeline.  
+This can be done by adding ```python
+sonar.qualitygate.wait=true
+``` to the **extraProperties** section in the **SonarQubePrepare/SonarCloudPrepare** task.  
 
-## Setup
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/your-repo/Onboarding-Pipeline-Examples.git
-    cd Onboarding-Pipeline-Examples/Azure-DevOps/python-example
-    ```
-
-2. Install dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-## Running Tests
-
-To run the tests, use the following command:
-```sh
-pytest
+Example
+``` sh
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      sonar.verbose=true
+      sonar.sources=src/
+      sonar.qualitygate.wait=true
 ```
