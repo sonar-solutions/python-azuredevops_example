@@ -44,6 +44,9 @@ In Azure DevOps, you need to have the following set up in your Project:
 - Status Check Branch Policy for **SonarQube/quality gate** (https://docs.microsoft.com/en-us/azure/devops/repos/git/pr-status-policy)
 - Build Validation Branch Policy (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git#pr-triggers)
 
+SonarQube Documentation:
+https://docs.sonarsource.com/sonarqube-server/latest/devops-platform-integration/azure-devops-integration/#preventing-pull-request-merges-when-the-quality-gate-fails
+
 To test this, follow these steps:
 1. Create New Branch
 2. In new branch, go to file src/s1940.py
