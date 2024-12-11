@@ -37,3 +37,23 @@ Example
       sonar.sources=src/
       sonar.qualitygate.wait=true
 ```
+
+## PR Decoration Test  
+In SonarQube (Server and Cloud), there is functionality to be able to block PR from being merged to SonarQube  
+In Azure DevOps, you need to have the following set up in your Project:  
+- Status Check Branch Policy for **SonarQube/quality gate** (https://docs.microsoft.com/en-us/azure/devops/repos/git/pr-status-policy)
+- Build Validation Branch Policy (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git#pr-triggers)
+
+To test this, follow these steps:
+1. Create New Branch
+2. In new branch, go to file src/s1940.py
+3. Add the following code snippet
+``` sh
+def fun(a):
+  i = 10
+  return i + a       # Noncompliant
+  i += 1             # this is never executed
+```
+4. Create PR to merge to the branch you have set the Branch Policies
+5. Wait for the SonarQube Scanner analysis to complete
+6. It should Fail and have the PR get blocked from merging
