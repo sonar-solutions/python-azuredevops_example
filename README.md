@@ -63,6 +63,6 @@ def fun(a):
 
 ## SonarQube Server Template Test  
 I have created an example for using Pipeline File templates in Azure DevOps
-The template repo is called **pipeline-templates**. This repo contains the yml files that will be used as the templates. If any change is made in these, the yml pipeline file using it will use this latest version of the task. This way, you can actually manage your SonarQube pipeline task from a central location instead of having to modify each one. 
-This template is to be used only for SonarScanner CLI type of analysis. 
+The template repo is called **pipeline-templates**. This repo contains the yml files that will be used as the templates. If any change is made in these, the yml pipeline file using it will use this latest version of the task. This way, you can actually manage your SonarQube pipeline task from a central location instead of having to modify each one.  
+This template is to be used only for SonarScanner CLI type of analysis.   
 Please check **sonarqube-server-template-test.yml** for the example of the template being used. 
