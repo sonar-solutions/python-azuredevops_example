@@ -1,6 +1,6 @@
 ## Overview
 
-This project is an example of using Azure DevOps for a dotnet project. It demonstrates how to set up a CI/CD pipeline for a Python application.  
+This project is an example of using Azure DevOps for a python project. It demonstrates how to set up a CI/CD pipeline for a Python application.  
 We have multiple CI/CD Pipeline examples, one for running the SonarScanner and sending the results to SonarQube Server and the other for sending the results to SonarQube Cloud.  
 
 PLEASE READ OUR SONARQUBE DOCUMENTATION FOR WORKING WITH AZURE DEVOPS PIPELINES  
@@ -25,7 +25,7 @@ SonarScanner Analysis Parameters > https://docs.sonarsource.com/sonarqube-server
 
 ## Example to fail the entire pipeline if Quality Gate fails
 There may be situations or branches in which you will like to fail the pipeline if the SonarQube Quality Gate fails in order to stop any other steps in the pipeline.  
-This can be done by adding ```python
+This can be done by adding ```
 sonar.qualitygate.wait=true``` 
 to the **extraProperties** section in the **SonarQubePrepare/SonarCloudPrepare** task.  
 
@@ -43,6 +43,9 @@ In SonarQube (Server and Cloud), there is functionality to be able to block PR f
 In Azure DevOps, you need to have the following set up in your Project:  
 - Status Check Branch Policy for **SonarQube/quality gate** (https://docs.microsoft.com/en-us/azure/devops/repos/git/pr-status-policy)
 - Build Validation Branch Policy (https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git#pr-triggers)
+
+In SonarQube Server, you need to make sure the DevOps Integration is correctly configured. Go to the Project, in Project Settings > General Settings > DevOps Platform Integration.
+In SonarQube Cloud, you need to make sure the DevOps Integration is correctly configured. Go to the Project, in Administration > General Settings > Repository Binding. 
 
 SonarQube Documentation:
 https://docs.sonarsource.com/sonarqube-server/latest/devops-platform-integration/azure-devops-integration/#preventing-pull-request-merges-when-the-quality-gate-fails
