@@ -24,7 +24,6 @@ steps:
   inputs:
     SonarQube: 'SonarQube Server-python-example'
     scannerMode: 'cli'
-    cliScannerVersion: '6.2.1.4610'
     configMode: 'file'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
