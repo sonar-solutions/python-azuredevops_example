@@ -32,7 +32,7 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.verbose=true
       sonar.projectKey=onboarding-examples_python-example
-      sonar.projectName=onboarding-examples_python-example
+      sonar.projectName=Onboarding Example - AzureDevOps - Python Example
       sonar.sources=src/
 
 - task: SonarQubeAnalyze@7
